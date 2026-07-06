@@ -22,5 +22,13 @@ EOT
       certificate_source                         = optional(string) # Default: "FrontDoor"
     }))
   }))
+  # --- Unconfirmed validation candidates, derived from azurerm_frontdoor_custom_https_configuration's provider source ---
+  # Not auto-enabled: either a bespoke provider validator we can't safely translate,
+  # or a path that crosses a list-typed block (needs its own for_each wrapping).
+  # Review, translate into a real validation{} block above, and delete once confirmed.
+  # path: frontend_endpoint_id
+  #   source:    [from validate.FrontendEndpointID] !ok
+  # path: frontend_endpoint_id
+  #   source:    [from validate.FrontendEndpointID] err != nil
 }
 
