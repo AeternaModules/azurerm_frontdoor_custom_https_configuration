@@ -19,7 +19,7 @@ EOT
       azure_key_vault_certificate_secret_name    = optional(string)
       azure_key_vault_certificate_secret_version = optional(string)
       azure_key_vault_certificate_vault_id       = optional(string)
-      certificate_source                         = optional(string) # Default: "FrontDoor"
+      certificate_source                         = optional(string)
     }))
   }))
   # --- Unconfirmed validation candidates, derived from azurerm_frontdoor_custom_https_configuration's provider source ---
